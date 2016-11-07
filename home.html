@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WEDDING INVITATION</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body background="wed1.jpg">
+	<div class="header">
+		<img src="love.png">
+		<h1>WEDDING INVITATION</h1>
+		<div class="nav">
+			<ul>
+				<li><a href="home.html" class="ha"><b>Home</b></a></li>
+				<li><a href="couple.html" class="ha"><b>Couple</b></a></li>
+				<li><a href="wedding.html" class="ha"><b>Wedding</b></a></li>
+				<li><a href="#" class="ha"><b>Wishes</b></a></li>
+				<li><a href="contact.html" class="ha"><b>Contact Us</b></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="bgimages">
+		<img src="wed.jpg">
+		<img src="wed.jpg">
+	</div>
+	<!-- header  ends here-->
+	<!-- slider starts here 
+	<div class="slider"> 
+		<img class="slide" src=" a.png" >
+		<img class="slide" src=" b.jpg"  >
+ 		<img class="slide" src=" c.jpg" >
+ 	</div><br><br>
+	 slider ends here -->
+	 <div class="main">
+	 	<div class="main1">
+	 		<h1>Brides grooms <img src="love.png"> Brides names</h1>
+	 		<h3>WE'RE GETTING MARRIED</h3>
+	 	</div><br>
+
+	 <div id="clockdiv">
+  <div>
+    <span class="days"></span>
+    <div class="smalltext">Days</div>
+  </div>
+  <div>
+    <span class="hours"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+	 </div><div style="height: 50px;"></div>
+	<!--<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("slide");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>-->
+<script>
+	function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+var deadline = new Date(Date.parse(new Date(2017,10,7,18,26,55)));
+initializeClock('clockdiv', deadline);
+</script>
+</body>
+</html>
